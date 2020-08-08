@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+.video-player-wrapper,
+.image-container {
+  position: relative;
+}
+
+.grid-layer,
+.image-layer,
+.video-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+}
+
+.grid-layer {
+  z-index: 2;
+}
+
+.image-layer {
+  z-index: 1;
+  visibility: visible;
+}
+
+.image-layer--visible {
+  visibility: visible;
+}
+
+.video-layer {
+  z-index: 0;
+}
+
+.grid-layer,
+.image-layer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 300px;
+  width: 300px;
+}
+
+.pane {
+  /*border: 1px solid black;*/
+  height: 100px;
+  width: 100px;
+}
+
+.pane--active,
+.pane--drop-target {
+  border: 1px solid blue;
+}
+
+img {
+  transition: top 1s, left 1s; /*and also height and width*/
+}
+
+.image--hidden {
+  visibility: hidden;
+}
